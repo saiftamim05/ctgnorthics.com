@@ -1,0 +1,486 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #f0f7f0;
+    color: #1a3b2e;
+    line-height: 1.7;
+}
+
+/* কাস্টম স্ক্রলবার */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #d5ecd5;
+}
+::-webkit-scrollbar-thumb {
+    background: #2e7d5e;
+    border-radius: 5px;
+}
+
+/* নেভিগেশন বার */
+.navbar {
+    background: linear-gradient(135deg, #1a4b2e 0%, #2e7d5e 100%);
+    color: white;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* লোগো অংশ */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.logo p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 300;
+    margin-top: -5px;
+}
+
+/* নেভিগেশন লিংক */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-left: auto; /* ডানদিকে সরানোর জন্য */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: #ffd966;
+    color: #1a4b2e;
+    transform: translateY(-2px);
+}
+
+/* হিরো সেকশন */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://magic-tan-jr4q9sfwlo.edgeone.app/photo_2026-03-06_03-16-38.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px black;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    color: #ffd966;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    animation: fadeIn 1s ease 0.6s both;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: #ffd966;
+    color: #1a4b2e;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease 0.9s both;
+}
+
+.btn:hover {
+    background-color: #ffe08c;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255,217,102,0.4);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* সেকশন স্টাইল */
+.section {
+    padding: 5rem 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1a4b2e;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #2e7d5e;
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.section-bg {
+    background-color: #e8f3e8;
+}
+
+/* আমাদের সম্পর্কে টেক্সট */
+.about-text {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* কার্ড গ্রিড */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #1a4b2e;
+}
+
+.card-content .date {
+    color: #2e7d5e;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* নেতৃত্ব সেকশন */
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.leader-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.leader-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.leader-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2e7d5e;
+    margin-bottom: 1rem;
+}
+
+.leader-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.leader-card p {
+    color: #2e7d5e;
+    font-weight: 500;
+}
+
+/* কাউন্টার সেকশন */
+.counter-section {
+    background: linear-gradient(135deg, #1a4b2e, #2e7d5e);
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    text-align: center;
+    padding: 3rem 5%;
+}
+
+.counter-item h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.counter-item p {
+    font-size: 1.2rem;
+}
+
+/* যোগাযোগ ফর্ম */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #d5ecd5;
+    border-radius: 8px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2e7d5e;
+    box-shadow: 0 0 0 3px rgba(46,125,94,0.2);
+}
+
+.submit-btn {
+    background-color: #1a4b2e;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #2e7d5e;
+}
+
+/* ফুটার */
+.footer {
+    background-color: #0f2b1f;
+    color: white;
+    padding: 3rem 10% 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: #ffd966;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #d5ecd5;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #ffd966;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    background-color: #1a4b2e;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #ffd966;
+    color: #0f2b1f;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #2e7d5e;
+    color: #d5ecd5;
+}
+
+/* মোবাইল রেসপন্সিভ */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        flex-direction: row;
+        gap: 5px;
+        margin-bottom: 0.5rem;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .logo p {
+        font-size: 0.7rem;
+    }
+
+    .nav-links {
+        margin-left: 0;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: 3rem 5%;
+    }
+
+    .counter-item h3 {
+        font-size: 2rem;
+    }
+
+    .counter-item p {
+        font-size: 1rem;
+    }
+}
